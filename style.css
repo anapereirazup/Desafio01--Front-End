@@ -1,0 +1,160 @@
+header {
+  width: 100%;
+  background-color: #2d3e50;
+  box-shadow: 2px 2px 2px grey;
+  height: 3.8rem;
+  text-align: center;
+  box-shadow: 0 0 1em;
+  position: relative;
+  z-index: 2;
+  
+}
+body {
+    background-color: #f9f9f9;
+    margin: 0;
+}
+
+.logo {
+    height: 50px;
+    width: 100px;
+    float: left;
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.containerMenu, shadow {
+    width: 15%;
+    position: relative;
+    float: left;
+    background-color: white;
+    height: 100vh; 
+    padding: 16px;
+    box-shadow: 0 0 0.3em gray ;
+
+}
+.containerMenu ul {
+    list-style: none;
+    margin: 0px;
+    padding: 1.0rem;
+    font-size: 1.2rem;
+    padding-left: 2rem;
+} 
+
+
+    /* Estilização da tabela  */
+.table {
+    
+    background-color: white; 
+    border: none;
+    margin: 0 auto;
+    width: 58rem;
+    color: grey;
+    font-size: 0.9rem;
+    margin-top: 50px;  
+    border-collapse: collapse;
+    border-radius: 5px;
+    box-shadow: 0 0 0.3em gray ;
+    overflow-y: auto;
+    /* overflow: hidden; */
+}
+tr:not(:last-child) {
+    border-bottom: 1px solid rgb(185, 159, 159);
+}
+
+th, td{
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+td, tr {      
+    /* padding: 0.5rem 0.9em 0em 0.7em;   */
+    /* width: 6rem; */
+    height: 3rem;
+    padding: 0.5rem 0.2rem 0rem 0.7rem;
+    
+}
+
+td:first-child {
+    text-align: center;
+}
+
+.icons {
+    width: 1rem;
+    padding: 0.5rem;
+}
+.icons:hover {
+    background: #aebe1e; 
+}
+
+li:hover {
+    color: #aebe1e; 
+    
+}
+
+.search {
+    margin-top: 1rem;
+    width: 39rem;
+    border-radius: 2.0rem;
+    outline: 0;
+    border: 1px solid;
+    height: 1.9rem;
+} 
+
+.fotos {
+    height: 2.3rem;
+    width: 2.3rem;
+    border-radius: 50%;
+}
+
+.name {
+    font-family:Verdana, Geneva, Tahoma, sans-serif; 
+    font-weight: 500;
+}
+/* ICONES */
+
+.bi {
+    background-image: url("svg/./lupa.svg");
+    background-repeat: no-repeat;
+    padding-left: 35px;
+    background-position: 10px;
+  }
+  .todos {
+    background-image: url("svg/./todos.svg");
+}
+
+  .check2 {
+      background-image: url("svg/./check.svg");
+  }
+  .trash {
+    background-image: url("svg/./trash.svg");  
+  }
+
+  .trash, .check2, .todos{
+    background-repeat: no-repeat;
+    padding-left: 2rem;
+    background-position: 0.5rem 0.2rem;
+    margin-right: 10rem;
+  }
+  .pessoa{
+    background-image: url("svg/./pessoa.svg");
+    background-repeat: no-repeat;
+    float: right;
+    background: rgb(255, 255, 255);
+    margin: 1rem 1rem 0rem 0rem ;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+  }
+
+        /* tablete */
+@media screen and (max-width: 770px) {      
+    .search { height: 1.6rem; width: 27rem; justify-content: center; margin-right: 10rem;}
+   
+}
+   
+/* celular */
+/* @media screen and (max-width: 600) {
+    .search{ height: 20px; width: 350px;}
+    header{width: 700px; }
+} */
