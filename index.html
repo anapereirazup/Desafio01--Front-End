@@ -4,37 +4,71 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Desafio-1</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
+    
+    <!-- <link rel="stylesheet" href="info.css"> -->
 </head>
 <body>
     <div class="grid-html">
-    <header class="shadow">
-        <img src="img/logo.jpg" alt="Imagem" class="logo"/>
-        <input class="search bi" type="search" name="" placeholder="Buscar" id="search_input"></input>
-        <img src="svg/pessoa.svg"  alt="Imagem" class="pessoa">
-    </header>
-    
-    <nav class="containerMenu shadow">
-        <ul id="button_">
-            <button type="button" class="todos menu">Todos</button type="button">
-            <button type="button" class="check2 menu">Atendidos</button type="button">
-            <button type="button" class="trash menu">Lixeira</button>
-        </ul>
-    </nav>
+        <header class="shadow">
+            <img src="assets/img/logo.jpg" alt="Imagem" class="logo"/>
+            <input class="search bi" type="search" name="" placeholder="Buscar" id="search_input"></input>
+            <img src="assets/svg/pessoa.svg"  alt="Imagem" class="pessoa">
+        </header>
+        
+        <nav class="containerMenu shadow">
+            <ul id="button_">
+                <button id="btnTodos" type="button" class="todos menu">Todos</button type="button">
+                <button id="btnAtendidos" type="button" class="check2 menu">Atendidos</button type="button">
+                <button id="btnLixeira" type="button" class="trash menu">Lixeira</button>
+            </ul>
+        </nav>
+
         <section> 
             <div class="containerContact">
-            <table class="table shadow-sm"> 
-                <tbody id="Contatos"> 
-                    <tr>
+                <table class="table shadow-sm"> 
+                    <tbody id="Contatos"> 
+                        <tr>
 
-                    </tr>
-            </tbody>
-            </table>
-        </div>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
     </div>
-        <script src="javascript/main.js"></script>
+
+    <div class="bodyInfor" style="display: none;">
+        <div class="headerInfor"></header>
+            <button class="circle" onclick="inforUser()"></button> <!-- BOTÃO PARA VOLTAR A TELA DA TABELA COM A FUNÇÃO  -->
+            <section class="containerDados" >
+                <div class="card-container">
+                    <div class="top">
+                        <div class="imagem-containerInfo">
+                            <img src="assets/img/pessoa1.jpg">
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div><h4 class="subtitulo">Hi, My name is </h4></div>
+                        <div><h1 class="titulo">NOME</h1></div>
+                        <div class="info-card">
+                            <img src="assets/svg/person.svg"  alt="Imagem" class="svg">
+                            <img src="assets/svg/envelope.svg"  alt="Imagem" class="svg">
+                            <img src="assets/svg/calendar.svg"  alt="Imagem" class="svg">
+                            <img src="assets/svg/geo.svg"  alt="Imagem" class="svg">
+                            <img src="assets/svg/telefone.svg"  alt="Imagem" class="svg">
+                            <img src="assets/svg/chave.svg"  alt="Imagem" class="svg">
+                            <!-- <p>Colocar input e icones person, envelope, calendar,geo,telefone,chave</p> -->
+                        </div>
+                        <!-- <a href="#" class="btn">Checar perfil</a> -->
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </div>
+        <script src="scripts/main.js"></script>
 </body>
 </html>
+
