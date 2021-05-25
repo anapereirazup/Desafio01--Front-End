@@ -149,22 +149,22 @@ td:first-child {
 /* ICONES */
 
 .bi {
-    background-image: url("assets/svg/./lupa.svg");
+    background-image: url("../assets/svg/lupa.svg");
     background-repeat: no-repeat;
     padding-left: 35px;
     background-position: 10px;
 }
 
 .todos {
-    background-image: url("assets/svg/./todos.svg");
+    background-image: url("../assets/svg/todos.svg");
 }
 .check2 {
-      background-image: url("assets/svg/./check.svg");}
+      background-image: url("../assets/svg/check.svg");}
 .trash {
-    background-image: url("assets/svg/./trash.svg");    
+    background-image: url("../assets/svg/trash.svg");    
 }
 .circle {
-    background-image: url("assets/svg/circle.svg");
+    background-image: url("../assets/svg/circle.svg");
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 50%;
@@ -190,7 +190,7 @@ td:first-child {
     color: #aebe1e; 
 }
 .pessoa{
-    background-image: url("assets/svg/./pessoa.svg");
+    background-image: url("../assets/svg/pessoa.svg");
     background-repeat: no-repeat;
     float: right;
     background: rgb(255, 255, 255);
