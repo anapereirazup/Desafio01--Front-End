@@ -4,8 +4,9 @@ var corpo_tabela = document.querySelector('tbody');
 let contato = null;
 
 let tableContact = document.getElementById('Contatos')
-
 let pagAtual = 'TODOS'
+let pessoaAtual = null
+
 
 let contacts = [{
         id: 1,    
@@ -107,6 +108,10 @@ btnAtendidos.addEventListener('click', function() {renderList(contacts, 'ATENDID
 let btnLixeira = document.getElementById('btnLixeira');
 btnLixeira.addEventListener('click', function() {renderList(contacts, 'LIXEIRA')})
 
+let btnEmail = document.getElementById('email');
+btnEmail.addEventListener('mouseover', function() {carregarEmail(pessoaAtual)})
+
+
  //FUNÇÃO PARA SALVAR NO LOCALSTORAGE
  localStorage.setItem('contact', JSON.stringify(contacts));
 //  getItemLocalStorage("contact");
@@ -136,11 +141,11 @@ function enviarLixeira(id) {
    
    
 
-//FUNÇÃO MAP PARA PERCORRER TODO O ARRAY E RETORNAR OS OBJETOS
 function renderList(list, status) {
     pagAtual = status
     let trList = list.filter(item => item.status === status);
-
+    
+//FUNÇÃO MAP PARA PERCORRER TODO O ARRAY E RETORNAR OS OBJETOS
     tableContact.innerHTML = trList.map((contacts) => {
         console.log(contacts)
         return `
@@ -165,14 +170,15 @@ function renderList(list, status) {
 // Função para abrir a tela de informações do contato e voltar para a tela da tabela. 
 function inforUser(id = null){
          if(id){
+            pessoaAtual = id 
            var gridHtml = document.querySelector('.grid-html');
            gridHtml.style.display = 'none';
    
            var containerDados = document.querySelector('.bodyInfor');
            containerDados.style.display = 'initial';
-            //Pega o nome do contato. 
+           //Pega o nome do contato. 
            contato = contacts.find(item => item.id == id)
-           document.querySelector(".titulo").innerHTML = contato.name;   
+           document.querySelector(".titulo").innerHTML = contato.name;  
   }
         else{
              var gridHtml = document.querySelector('.grid-html');
@@ -182,6 +188,14 @@ function inforUser(id = null){
              containerDados.style.display = 'none';
            }
 }
+
+function carregarEmail(id){
+    contato = contacts.find(item => item.id == id)
+    document.querySelector(".titulo").innerHTML = contato.email; 
+    console.log(id)
+}
+
+
 
 //EVENTO PARA AÇÕES DO TECLADO
 seatch_input.addEventListener('keyup', function(e) {
