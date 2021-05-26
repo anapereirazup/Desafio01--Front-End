@@ -14,7 +14,9 @@ let contacts = [{
         email: 'lorraine.beck22@example.com',
         cell: '(960) - 861-1890',
         city:'Uberlandia - MG',
-        status: 'TODOS'
+        status: 'TODOS',
+        niver: '6/07/1998',
+        password: '1030',
     },
 
     {
@@ -24,7 +26,9 @@ let contacts = [{
         email: 'loremipsum@mail.com',
         cell: '(960)-861-1890',
         city: '	Uberlândia - MG',
-        status: 'ATENDIDOS'
+        status: 'ATENDIDOS',
+        niver: '6/07/1999',
+        password: '1031',
     },
     {
         id: 3,
@@ -33,7 +37,9 @@ let contacts = [{
         email: 'dolorsit123@mail.com',
         cell: '(960)-861-1890',
         city: 'São Paulo - SP',
-        status: 'LIXEIRA'
+        status: 'LIXEIRA',
+        niver: '6/07/2000',
+        password: '1032',
     },
     {
         id: 4,
@@ -42,7 +48,9 @@ let contacts = [{
         email: 'consectutor123@mail.com',
         cell: '(960)-861-1890',
         city: '	Uberlândia - MG',
-        status: 'TODOS'
+        status: 'TODOS',
+        niver: '6/07/2001',
+        password: '1033',
     },
     {
         id: 5,
@@ -51,7 +59,9 @@ let contacts = [{
         email: 'elitamet@mail.com',
         cell: '(960)-861-1890',
         city: '	Uberlândia - MG',
-        status: 'TODOS'
+        status: 'TODOS',
+        niver: '6/07/2002',
+        password: '1034',
     },
     {
         id: 6,
@@ -60,7 +70,9 @@ let contacts = [{
         email: 'adipiscing@mail.com',
         cell: '(960)-861-1890',
         city: '	São Paulo - SP',
-        status: 'TODOS'
+        status: 'TODOS',
+        niver: '6/07/2003',
+        password: '1035',
     },
     {
         id: 7,
@@ -69,7 +81,9 @@ let contacts = [{
         email: 'ipsumdolor12345@mail.com',
         cell: '(960)-861-1890',
         city: '	Uberlândia - MG',
-        status: 'TODOS'
+        status: 'TODOS',
+        niver: '6/07/2004',
+        password: '1036',
     },
     {
         id: 8,
@@ -78,7 +92,9 @@ let contacts = [{
         email: 'beckelitsit@mail.com',
         cell: '(960)-861-1890',
         city: '	Uberlândia - MG',
-        status: 'TODOS'
+        status: 'TODOS',
+        niver: '6/07/2005',
+        password: '1037',
     },
 ]
 
@@ -113,9 +129,9 @@ function enviarLixeira(id) {
     renderList(contacts,  pagAtual)
 }
    //NÃO COPIAR A FUNCTION ENVIAR LIXEIRA 3 VEZES. Esquema de conseguir encapsular, conseguir deixa o mais simples possivel e unico, para poder aproveitar
-   //ele sempre. É a memsa funçção.Então, devo passar o status ali na linha 104 e comparar/ jogar na linha 108. 
-   //Daí no enviar lixeira vou ter que passar o Status que eu quero. linha 139. Chamaando o enviar lixeira? Não, agr ele vai ser o changeStatus
-   //  changeStatus, vai ser único, global. Porq agora eu vou querer filtrar o status, alteraro status, para o parametro qu eu to passando.
+   //ele sempre. É a mesma função.Então, devo passar o status ali na linha 104 e comparar/ jogar na linha 108. 
+   //Daí no enviar lixeira vou ter que passar o Status que eu quero. linha 139. Chamando o enviar lixeira. Não, agr ele vai ser o changeStatus
+   //  changeStatus, vai ser único, global. Porq agora eu vou querer filtrar o status, alterar o status, para o parametro qu eu to passando.
    //Então, no enviar lixeira vou passar o status pra ele. //Adicionar 'LIXEIRA' no parametro da linha 139. 
    
    
@@ -149,24 +165,22 @@ function renderList(list, status) {
 // Função para abrir a tela de informações do contato e voltar para a tela da tabela. 
 function inforUser(id = null){
          if(id){
-            var gridHtml = document.querySelector('.grid-html');
-            gridHtml.style.display = 'none';
+           var gridHtml = document.querySelector('.grid-html');
+           gridHtml.style.display = 'none';
    
            var containerDados = document.querySelector('.bodyInfor');
            containerDados.style.display = 'initial';
             //Pega o nome do contato. 
            contato = contacts.find(item => item.id == id)
-           document.querySelector(".titulo").innerHTML = contato.name;
-            
-           
-             
-         }else{
-            var gridHtml = document.querySelector('.grid-html');
-            gridHtml.style.display = 'grid';
-   
-           var containerDados = document.querySelector('.bodyInfor');
-           containerDados.style.display = 'none';
-         }
+           document.querySelector(".titulo").innerHTML = contato.name;   
+  }
+        else{
+             var gridHtml = document.querySelector('.grid-html');
+             gridHtml.style.display = 'grid';
+    
+             var containerDados = document.querySelector('.bodyInfor');
+             containerDados.style.display = 'none';
+           }
 }
 
 //EVENTO PARA AÇÕES DO TECLADO
