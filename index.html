@@ -39,7 +39,7 @@
         </section>
     </div>
 
-    <div class="bodyInfor" style="display: none;">
+    <div class="bodyInfor">
         <div class="headerInfor"></header>
             <button class="circle" onclick="inforUser()"></button> <!-- BOTÃO PARA VOLTAR A TELA DA TABELA COM A FUNÇÃO  -->
             <section class="containerDados" >
@@ -50,15 +50,23 @@
                         </div>
                     </div>
                     <div class="bottom">
-                        <div><h4 class="subtitulo">Hi, My name is </h4></div>
+                        <!-- <div><h4 class="subtitulo">Hi, My name is </h4></div> -->
                         <div><h1 class="titulo">NOME</h1></div>
                         <div class="info-card">
-                            <ul>
-                                <li><img src="assets/svg/person.svg" alt="pessoa" onclick="inforUser()" class="svg"/></li>
-                                <li><img src="assets/svg/envelope.svg"  alt="Imagem" id="email" class="svg"/></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
+                            <ul class="iconsInfor">
+                                <!-- <li><img src="assets/svg/person.svg"  alt="nome" onmouseover="pegaInfor('person')" class="svg"/></li>
+                                <li><img src="assets/svg/envelope.svg"  alt="email" onmouseover="pegaInfor('email')" class="svg"/></li>
+                                <li><img src="assets/svg/calendar.svg"  alt="data" onmouseover="pegaInfor('data')" class="svg"/></li>
+                                <li><img src="assets/svg/geo.svg"  alt="endereço" onmouseover="pegaInfor('endereço')" class="svg"/></li>
+                                <li><img src="assets/svg/telefone.svg"  alt="telefone" onmouseover="pegaInfor('telefone')" class="svg"/></li>
+                                <li><img src="assets/svg/chave.svg"  alt="senha" onmouseover="pegaInfor('senha')" class="svg"/></li> -->
+
+                                <li><img src="assets/svg/person.svg"   alt="pessoa"      onclick="inforUser()" class="svg"/></li>
+                                <li><img src="assets/svg/envelope.svg" alt="Imagem"      onclick="carregarEmail()" id="email" class="svg"/></li>
+                                <li><img src="assets/svg/calendar.svg" alt="calendario"  id="calendario" class="svg"/></li>
+                                <li><img src="assets/svg/geo.svg"      alt="localização" id="geo"        class="svg"/></li>
+                                <li><img src="assets/svg/telefone.svg" alt="telefone"    id="telefone"   class="svg"/></li> 
+                                <li><img src="assets/svg/chave.svg"    alt="senha"       id="chave"      class="svg"/></li> 
                             </ul>
                             <!-- <img src="assets/svg/person.svg"    alt="Imagem" class="svg">
                             <img src="assets/svg/envelope.svg"  alt="Imagem" class="svg">

@@ -176,7 +176,7 @@ td:first-child {
 }
 
 /* ICONES MENU */
-.menu{
+ .menu{
     background-repeat: no-repeat;
     padding-left: 4rem;
     background-position: 0.5rem 0.2rem;
@@ -185,11 +185,31 @@ td:first-child {
     font-size: large;
     border: none;
     background-color: white;
+} 
+
+
+.iconsInfor, ul {
+   
+    list-style: none;
 }
+.iconsInfor {
+    padding: 2rem;
+    display:flex;
+}
+
+.info-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+h1{
+    padding: 1rem;
+}
+
 .todos:hover, .check2:hover, .trash:hover {
     color: #aebe1e; 
 }
-.pessoa{
+.pessoa {
     background-image: url("../assets/svg/pessoa.svg");
     background-repeat: no-repeat;
     float: right;
@@ -201,6 +221,11 @@ td:first-child {
 }
 
 /*CSS INFOR USUARIOS*/
+.bodyInfor{
+    display: none;
+}
+
+
 .card-container {
     width: 580px;
     height: 430px;
@@ -251,8 +276,11 @@ td:first-child {
     color: rgb(159, 163, 167);
 }
 
+
 .info-card{
-    padding: 5rem;
+    display: flex-box;
+    align-items: center;
+    justify-content: center;
 }
 .info-card img{
     display: flex-box;
