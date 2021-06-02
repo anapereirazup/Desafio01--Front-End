@@ -227,14 +227,14 @@ h1{
 
 
 .card-container {
-    width: 580px;
-    height: 430px;
+    width: 58rem;
+    height: 42rem;
     background: #fff;
     border-radius: 6px;
-    box-shadow: 0 1px 5px 1px rgba(0, 0, 0, .3);
+    box-shadow: 0 1px 5px 1px rgb(0 0 0 / 30%);
     position: absolute;
-    top: 25%;
-    left: 31%;
+    top: 16rem;
+    left: 38rem;
     transform: translate(-50px, -50px);
     z-index: 5;
 }
@@ -296,22 +296,28 @@ svg:hover path{
 
         /* DESKTOP */
 @media (min-width: 1880px){      
-    /* body{ background-color: royalblue;} */
+    /* body{ background-color: royalblue;}  */
+    
     header {width: 100%;}
     .containerMenu{ width: 18rem;}
     .table{width: 100rem;}
     .search{ width: 100rem; }
+    .top{height: 10.7rem; }
+    .card-container{ top: 20rem; width: 65rem; left: 65rem;
+        height: 45rem;}
+        .headerInfor{ height: 33rem;}
 }
 
 
 @media (max-width: 768px) {      
-    /* body{ background-color: rgb(155, 231, 14);} */
-   .menu{  margin: 1rem 0rem 0rem -5rem;}
+     /* body{ background-color: rgb(155, 231, 14);}  */
+   .menu{  margin: 1rem 0rem 0rem -3rem;}
    .containerMenu {width: 15rem; }
 }
 
 /*TABLET*/
 @media screen and (min-width: 768) and (max-width: 1024) {
+    
     .search { height: 1.6rem; width: 27rem; justify-content: center; margin-right: 10rem;} 
 
 }

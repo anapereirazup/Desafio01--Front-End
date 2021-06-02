@@ -14,7 +14,7 @@ let contacts = [{
         name: 'Lorraine',
         email: 'lorraine.beck22@example.com',
         cell: '(960) - 861-1890',
-        city:'Uberlandia - MG',
+        city:'Belo Horizonte - MG',
         status: 'TODOS',
         niver: '6/07/1998',
         password: '1030',
@@ -60,7 +60,7 @@ let contacts = [{
         email: 'elitamet@mail.com',
         cell: '(960)-861-1890',
         city: '	Uberlândia - MG',
-        status: 'TODOS',
+        status: 'ATENDIDOS',
         niver: '6/07/2002',
         password: '1034',
     },
@@ -71,7 +71,7 @@ let contacts = [{
         email: 'adipiscing@mail.com',
         cell: '(960)-861-1890',
         city: '	São Paulo - SP',
-        status: 'TODOS',
+        status: 'LIXEIRA',
         niver: '6/07/2003',
         password: '1035',
     },
@@ -89,16 +89,16 @@ let contacts = [{
     {
         id: 8,
         image: 'assets/img/pessoa2.jpg',
-        name: 'Teste',
+        name: 'Beck',
         email: 'beckelitsit@mail.com',
         cell: '(960)-861-1890',
-        city: '	Uberlândia - MG',
+        city: '	Belo Horizonte - MG',
         status: 'TODOS',
         niver: '6/07/2005',
         password: '1037',
     },
 ]
-
+//VARIAVÉIS REFERENTE AO MENU LATERAL ESQUERDO
 let btnTodos = document.getElementById('btnTodos');
 btnTodos.addEventListener('click', function() {renderList(contacts, 'TODOS')})
 
@@ -108,35 +108,67 @@ btnAtendidos.addEventListener('click', function() {renderList(contacts, 'ATENDID
 let btnLixeira = document.getElementById('btnLixeira');
 btnLixeira.addEventListener('click', function() {renderList(contacts, 'LIXEIRA')})
 
+//FUNÇÕES PARA CARREGAR INFORMAÇÕES COM O EVENTO MOUSEOVER
 let btnEmail = document.getElementById('email');
  btnEmail.addEventListener('mouseover', function() {
 
     carregarInfo({
-        frase: "Meu e-mail é ",
+        frase: "My email address is ",
         id: pessoaAtual,
         messageProperty: "email"
     });
-
-    //  carregarEmail(pessoaAtual)
 })
-
 let btnData = document.getElementById('calendario');
  btnData.addEventListener('mouseover', function() {
+
      carregarInfo({
-        frase: "Meu aniversário é ",
+        frase: "My birthday is",
         id: pessoaAtual,
         messageProperty: "niver"
     });
 })
 
+let btnGeo = document.getElementById('geo');
+ btnGeo.addEventListener('mouseover', function() {
+     
+     carregarInfo({
+        frase: "My address is ",
+        id: pessoaAtual,
+        messageProperty: "city"
+    });
+})
+
+let btnTelefone = document.getElementById('telefone');
+ btnTelefone.addEventListener('mouseover', function() {
+     
+     carregarInfo({
+        frase: "My phone number is ",
+        id: pessoaAtual,
+        messageProperty: "cell"
+    });
+})
+
+let btnChave = document.getElementById('chave');
+ btnChave.addEventListener('mouseover', function() {
+
+    carregarInfo({
+        frase: "My password is",
+        id: pessoaAtual,
+        messageProperty: "password"
+    });
+})
+//FUNÇÃO GLOBAL. 
+function carregarInfo(form){
+    contato = contacts.find(item => item.id == form.id);
+    console.log("contato", contato);
+    document.querySelector(".titulo").innerHTML = `<div>${form.frase}</div> ${contato[form.messageProperty]}`; 
+  }
+
 
  //FUNÇÃO PARA SALVAR NO LOCALSTORAGE
  localStorage.setItem('contact', JSON.stringify(contacts));
-//  getItemLocalStorage("contact");
-//  alert(getItemLocalStorage("contact"));
  console.log(window.localStorage.getItem(contacts));
   
-
 renderList(contacts, 'TODOS');
 
 //Pegando o status inicial, e modiicando para lixeira, e renderizando a pagina atual que é o status no qual o usuario está.
@@ -168,6 +200,17 @@ function enviarLixeira(id, status) {
 
     renderList(contacts,  pagAtual)
 }  
+function enviarAtendidos(id) {
+    console.log(id);
+    contacts = contacts.map(item => {
+        if(item.id === id) {
+            return {...item, status: 'ATENDIDOS'}
+        } 
+        return item;
+    })
+
+    renderList(contacts,  pagAtual)
+}  
 //Função que está renderizando a pagina, no qual ele pega o item e verifica o status, se for === o status ele manda. A variavel pagAtual, é uma variavel global, no qual ela "é"
 //o status.
 function renderList(list, status) {
@@ -187,7 +230,7 @@ function renderList(list, status) {
                 <td colspan="3" id="button_">
                 <button type="button" class="trash iconsTable" id="enviar_lixeira" value="remover" onclick="enviarLixeira(${contacts.id})"></button type="button">
                 <button type="button" class="todos iconsTable" id="enviar_todos" value="todos" onclick="enviarTodos(${contacts.id})"></button type="button">
-                <button type="button" class="check2 iconsTable" id=""></button>
+                <button type="button" class="check2 iconsTable" id="enviar_atendidos" value="atendidos" onclick="enviarAtendidos(${contacts.id})"></button type="button">
                             
                 </td>
         </tr>  
@@ -207,7 +250,7 @@ function inforUser(id = null){
 
            //Pega o nome do contato.   EU ACHO QUE NÃO DEVERIA ESTAR AQUI 
            contato = contacts.find(item => item.id === id)
-            document.querySelector(".titulo").innerHTML =  `<div>Oi, meu nome é </div>` + contato.name;  
+            document.querySelector(".titulo").innerHTML =  `<div>Hi, my name is </div>` + contato.name;  
   }
 
         else{
@@ -220,48 +263,8 @@ function inforUser(id = null){
 }
 
 
-function carregarInfo(form){
-    contato = contacts.find(item => item.id == form.id);
-    console.log("contato", contato);
-    document.querySelector(".titulo").innerHTML = `<div>${form.frase}</div> ${contato[form.messageProperty]}`; 
-  }
 
 
-// function pegaInfor(propriedade){
-//     // let person = listaDetails[listaDetails.length - 1];
-//     contato = contacts[contacts.length - 8];  //Aq so pega o primeiro contato.
-//     let finalPerson = contacts.filter((el) => el.id == contato.id);
-    
-//     let text= null;
-//     text= document.querySelector(".titulo").textContent;
-// //    let text = document.querySelector(".titulo"); 
-//     console.log(finalPerson)
-//    switch(propriedade) {
-//         case "person":
-//             text = document.querySelector(".titulo").innerHTML =`<div> Meu aniversario é </div>` + finalPerson[0].name;
-
-//         break;
-        
-//         case "email":
-//             text = document.querySelector(".titulo").innerHTML =`<div> Meu aniversario é </div>` + finalPerson[0].email;
-            
-//         break;
-        
-//         case "data":
-//             text = document.querySelector(".titulo").innerHTML = `<div> Meu aniversario é </div>` + finalPerson[0].niver;
-            
-//         break;
-
-//         case "senha":
-//             text = document.querySelector(".titulo").innerHTML = `<div> Meu aniversario é </div>` + finalPerson[0].password;
-            
-//         break; 
-
-//      default:       
-//       break; 
-//    } 
-// }
- 6
 
 //EVENTO PARA AÇÕES DO TECLADO
 seatch_input.addEventListener('keyup', function(e) {
